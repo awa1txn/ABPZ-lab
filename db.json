@@ -1,0 +1,29 @@
+{
+  "blacklist": [
+    {
+      "name": "drctfgjm",
+      "id": 1
+    },
+    {
+      "name": "tfcgvjnmk",
+      "id": 2
+    },
+    {
+      "name": "pop",
+      "id": 3
+    },
+    {
+      "name": "opo",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "login": "admin",
+      "password": "admin",
+      "banned": false,
+      "strictPass": true
+    }
+  ]
+}

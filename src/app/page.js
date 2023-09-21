@@ -1,95 +1,106 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+
+  const nav = useRouter()
+
+  const [userList, setUserList] = useState([])
+  const [login, setLogin] = useState('')
+  const [password, setPassword] = useState('')
+  const [err, setErr] = useState('')
+  const [signTriesCounter, setSignTriesCounter] = useState(0)
+  function listAllUserData() {
+      const responce = fetch('http://localhost:3001/users')   
+      .then((response) => { 
+        response.json().then((data) => {
+          setUserList(data);
+            return data;
+        }).catch((err) => {
+            console.log(err);
+        })
+    });
+  }
+  function sign(login, password) {
+    const user = userList.find(user => user.login === login && user.password === password);
+    try{
+      if(user.banned){
+        throw new Error('banned')
+      }
+
+      if (user) {
+          window.localStorage.setItem('authData', JSON.stringify(user))
+          nav.push('/profile')
+          return 1; //success sign in
+      } else {
+        setSignTriesCounter(signTriesCounter+1)
+        setLogin('')
+        setPassword('')
+          setErr('Failed: wrong login or password')
+          return 0; //failed sign in
+      }
+    }
+    catch(err) {
+      if(err.message === 'banned') { setErr('You were banned') }
+    }
+  }
+  useEffect(()=>{
+    listAllUserData()
+  }, [])
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+    <>
+    <header
+    style={{width:'100%',display:'flex', justifyContent:'space-between'}}
+    >
+      <div>
+        <Link
+        href={'/about'}
+        >
+        <h1>
+          
+        </h1>
+        </Link>
+      </div>
+    </header>
+    <section>
+      <div 
+      style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center', width: '100%', height:'100svh'}}>
+      <label>Please. Sign</label>
+      <input
+      placeholder='Login'
+      style={{width: 200, margin: 5}}
+      value={login}
+      onChange={(e)=>{setLogin(e.target.value); setErr('')}}
+      disabled={signTriesCounter > 2}
+      />
+      <input
+      placeholder='Password'
+      type='password'
+      style={{width: 200, margin: 5}}
+      value={password}
+      onChange={(e)=>{setPassword(e.target.value); setErr('')}}
+      disabled={signTriesCounter > 2}
+      />
+      <p>{err}</p>
+      {signTriesCounter > 2 && <>
+        <p
+        style={{width: 200, textAlign:'center', margin:'10px 0'}}>
+          <p>You've lost your 3 tries to log in.</p>
+          Reload this page if you want sign in again.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      </>}
+      <button
+      style={{width: 200, margin: 5}}
+      onMouseUp={()=>{console.log(sign(login, password))}}
+      disabled={signTriesCounter > 2}
+      >
+        SIGN IN
+      </button>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </section>
+    </>
   )
 }

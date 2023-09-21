@@ -21,9 +21,16 @@
     {
       "id": 0,
       "login": "admin",
-      "password": "admin",
+      "password": "admin123",
       "banned": false,
       "strictPass": true
+    },
+    {
+      "login": "user",
+      "password": "",
+      "banned": false,
+      "strictPass": true,
+      "id": 1
     }
   ]
 }

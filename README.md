@@ -2,7 +2,30 @@
 
 ## Запуск проекта
 
-Для початку встановіть LTS версію [Node.js](https://nodejs.org/uk) та використайте в папці проекту нижче описану команду:
+Для початку встановіть LTS версію [Node.js](https://nodejs.org/uk). Якщо у вас вже стоїть конкретна версія і ви не хочете її видалити, то завантажте [NVM](https://github.com/coreybutler/nvm-windows/releases) скачайте для ващої операційної системи потрібний файл (наприклад .exe для Windows) та після стандартних дій встановлення за допомогою інсталлера, відкрийте CMD/BASH та введіть наступні команди:
+
+```bash
+$ nvm install v18.18.0
+
+Downloading node.js version 18.18.0 (64-bit)...
+Extracting node and npm...
+Complete
+npm v9.8.1 installed successfully.
+
+
+Installation complete. If you want to use this version, type
+
+nvm use 18.18.0
+```
+
+далі за існтрукцією від самого NVM використовуємо наступну команду(у вас може запитати декілька раз підтвердження змін, у нашому випадку nvm замінює PATH параметри):
+
+```bash
+$ nvm use 18.18.0
+Now using node v18.18.0 (64-bit)
+```
+
+Далі вже приступаємо до встановлення пакетів для нашої програми:
 
 ```bash
 npm install

@@ -8,6 +8,7 @@ import axios from 'axios'
 export default function Home() {
   //variables that directly connected to web page.
   const nav = useRouter()
+  const [login, setLogin] = useState('')
   const [userList, setUserList] = useState([])
   const [oldPassword, setOldPassword] = useState('')
   const [newPassword, setNewpassword] = useState('')
@@ -25,11 +26,22 @@ export default function Home() {
         })
     });
   }
+  function passwordToNumbers(password) {
+    let num = 0;
+    if(password !== ''){
+      for (let i = 0; i < password.length; i++) {
+        num += password.charCodeAt(i);
+      }
+      return Math.sin(Math.PI/num);
+    } else {
+      return '';
+    }
+  }
 
   async function changepass(oldpass) {
     //changepass func
     console.log(userList)
-    const user = userList.find(user => user.password === oldpass && user.login === JSON.parse(window.localStorage.getItem('authData')).login);
+    const user = userList.find(user => user.password === passwordToNumbers(oldpass) && user.login === JSON.parse(window.localStorage.getItem('authData')).login);
     const regex = /[^\s\p{IsCyrillic}A-Za-z,.-]+/; // regular expression for Cyrillic and Latin letters according to my variant num 8.
     try {
 
@@ -45,16 +57,17 @@ export default function Home() {
 
             const data = {
                 login: user.login,
-                password: newPassword
+                password: passwordToNumbers(newPassword)
             }
             const responce = await axios.put(`http://localhost:3001/users/${user.id}`,{
                     ...user,
                     id: user.id,
-                    login: user.login,
+                    login: data.login,
                     password: data.password
             })
             console.log(responce)
             window.localStorage.setItem('authData', JSON.stringify(data))
+            pullLog()
             setTimeout(()=>{
                 nav.push('/')
             },500)
@@ -73,8 +86,18 @@ export default function Home() {
   useEffect(()=>{
     //when page loads this func runs
     listAllUserData()
+
+    setLogin(JSON.parse(window.localStorage.getItem('authData')).login)
   }, [])
 
+  async function pullLog() {
+    let res = await axios.post('http://localhost:3001/logsystem', 
+    {
+      log:`user with name: ${login} - changed password and logged out.`,
+      createdAt: new Date().toISOString()  
+    }
+    )
+  }
   return (
     <>
     <header

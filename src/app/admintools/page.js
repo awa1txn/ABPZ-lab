@@ -62,6 +62,15 @@ export default function Home() {
 
   }, [])
 
+  async function pullLog(actionMode) {
+    let res = await axios.post('http://localhost:3001/logsystem', 
+    {
+      log:`ADMIN: ${actionMode} `,
+      createdAt: new Date().toISOString()  
+    }
+    )
+  }
+
     return (
         <>
                     <header
@@ -81,9 +90,18 @@ export default function Home() {
             {
               isAdmin &&
               <Link
-              href={'/admintools'}>
+              href={'/loggedActions'}>
                 <h3>
-                  Admin tools
+                  Watch logged actions
+                </h3>
+              </Link>
+            }
+            {
+              isAdmin &&
+              <Link
+              href={'/profile'}>
+                <h3>
+                  Profile
                 </h3>
               </Link>
             }
@@ -92,13 +110,6 @@ export default function Home() {
             >
             <h3>
               Change password
-            </h3>
-            </Link>
-            <Link
-            href={'/'}
-            >
-            <h3>
-              Log out
             </h3>
             </Link>
           </div>
@@ -135,6 +146,7 @@ export default function Home() {
                         banned: false,
                         strictPass: true
                     })
+                    pullLog('NEW USER WAS ADDED')
                     window.location.reload()
                   }
                   catch(err) {
@@ -159,6 +171,7 @@ export default function Home() {
                 <button
                 onClick={async ()=>{
                     const res = await axios.post(`http://localhost:3001/blacklist/`, {name: newBlacklistName})
+                    pullLog('NEW BLACKLIST NICKNAME WAS ADDED')
                     window.location.reload()
                 }}>
                     submit
@@ -184,6 +197,7 @@ export default function Home() {
                             banned: !el?.banned,
                             strictPass: el?.strictPass
                         })
+                        pullLog('BANNED/UNBANNED SOMEONE')
                         window.location.reload()
                     }}
                     />
@@ -198,6 +212,7 @@ export default function Home() {
                             banned: el.banned,
                             strictPass: !el?.strictPass
                         })
+                        pullLog('TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE')
                         window.location.reload()
                     }}
                     />

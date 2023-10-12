@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
 
@@ -36,6 +37,14 @@ export default function Home() {
       setLogin(JSON.parse(window.localStorage.getItem('authData')).login)
     }
   }, [])
+  async function pullLog() {
+    let res = await axios.post('http://localhost:3001/logsystem', 
+    {
+      log:`user with name: ${login} - logged out.`,
+      createdAt: new Date().toISOString()  
+    }
+    )
+  }
   return (
     <>
     <header
@@ -69,7 +78,11 @@ export default function Home() {
         </h3>
         </Link>
         <Link
-        href={'/'}
+          onClick={()=>{
+            pullLog();
+            localStorage.clear()
+          }}
+          href={'/'}
         >
         <h3>
           Log out

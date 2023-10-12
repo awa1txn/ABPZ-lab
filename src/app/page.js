@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
 
@@ -24,6 +25,18 @@ export default function Home() {
         })
     });
   }
+
+  function passwordToNumbers(password) {
+    let num = 0;
+    if(password !== ''){
+      for (let i = 0; i < password.length; i++) {
+        num += password.charCodeAt(i);
+      }
+      return Math.sin(Math.PI/num);
+    } else {
+      return '';
+    }
+  }
   function sign(login, password) {
     const user = userList.find(user => user.login === login && user.password === password);
     try{
@@ -33,7 +46,8 @@ export default function Home() {
 
       if (user) {
           window.localStorage.setItem('authData', JSON.stringify(user))
-          nav.push('/profile')
+          pullLog()
+          nav.push('/authQuestions')
           return 1; //success sign in
       } else {
         setSignTriesCounter(signTriesCounter+1)
@@ -45,8 +59,18 @@ export default function Home() {
     }
     catch(err) {
       if(err.message === 'banned') { setErr('You were banned') }
+      else{setErr('Seems like wrong password.')}
     }
   }
+  async function pullLog() {
+    let res = await axios.post('http://localhost:3001/logsystem', 
+    {
+      log:`user with name: ${login} - logged in.`,
+      createdAt: new Date().toISOString()  
+    }
+    )
+  }
+
   useEffect(()=>{
     listAllUserData()
   }, [])
@@ -94,7 +118,7 @@ export default function Home() {
       </>}
       <button
       style={{width: 200, margin: 5}}
-      onMouseUp={()=>{console.log(sign(login, password))}}
+      onMouseUp={()=>{console.log(sign(login, passwordToNumbers(password))); }}
       disabled={signTriesCounter > 2}
       >
         SIGN IN

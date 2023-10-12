@@ -15,22 +15,457 @@
     {
       "name": "opo",
       "id": 4
+    },
+    {
+      "name": "decan",
+      "id": 5
+    },
+    {
+      "name": "wow",
+      "id": 6
+    }
+  ],
+  "logsystem": [
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T17:14:34.668Z",
+      "id": 1
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T17:21:06.593Z",
+      "id": 2
+    },
+    {
+      "log": "user with name: user - logged in.",
+      "createdAt": "2023-10-12T17:22:27.018Z",
+      "id": 3
+    },
+    {
+      "log": "user with name: user - changed password.",
+      "createdAt": "2023-10-12T17:26:27.333Z",
+      "id": 4
+    },
+    {
+      "log": "user with name: user - logged in.",
+      "createdAt": "2023-10-12T17:26:44.495Z",
+      "id": 5
+    },
+    {
+      "log": "user with name: user - logged out.",
+      "createdAt": "2023-10-12T17:28:32.401Z",
+      "id": 6
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T17:28:39.609Z",
+      "id": 7
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T17:46:36.549Z",
+      "id": 8
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T17:47:04.253Z",
+      "id": 9
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:47:14.102Z",
+      "id": 10
+    },
+    {
+      "log": "ADMIN: NEW BLACKLIST NICKNAME WAS ADDED ",
+      "createdAt": "2023-10-12T17:47:22.551Z",
+      "id": 11
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T17:47:26.432Z",
+      "id": 12
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T17:47:29.112Z",
+      "id": 13
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T17:47:32.771Z",
+      "id": 14
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:14.324Z",
+      "id": 15
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:25.731Z",
+      "id": 16
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:32.591Z",
+      "id": 17
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:39.781Z",
+      "id": 18
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:45.723Z",
+      "id": 19
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:50:54.003Z",
+      "id": 20
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:51:18.333Z",
+      "id": 21
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:51:36.087Z",
+      "id": 22
+    },
+    {
+      "log": "ADMIN: NEW USER WAS ADDED ",
+      "createdAt": "2023-10-12T17:51:41.812Z",
+      "id": 23
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T18:03:47.570Z",
+      "id": 24
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T20:47:08.701Z",
+      "id": 25
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T20:47:47.397Z",
+      "id": 26
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T20:47:54.237Z",
+      "id": 27
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T20:52:25.437Z",
+      "id": 28
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T20:52:32.029Z",
+      "id": 29
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T21:02:52.122Z",
+      "id": 30
+    },
+    {
+      "log": "user with name: admin - changed password and logged out.",
+      "createdAt": "2023-10-12T21:03:58.263Z",
+      "id": 31
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T21:07:37.657Z",
+      "id": 32
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T21:08:26.215Z",
+      "id": 33
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T21:08:29.004Z",
+      "id": 34
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T21:08:30.790Z",
+      "id": 35
+    },
+    {
+      "log": "ADMIN: NEW BLACKLIST NICKNAME WAS ADDED ",
+      "createdAt": "2023-10-12T21:08:38.498Z",
+      "id": 36
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:42:53.012Z",
+      "id": 37
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:42:55.018Z",
+      "id": 38
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:42:56.730Z",
+      "id": 39
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:42:58.643Z",
+      "id": 40
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:00.400Z",
+      "id": 41
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:02.157Z",
+      "id": 42
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:04.035Z",
+      "id": 43
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:05.748Z",
+      "id": 44
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:07.909Z",
+      "id": 45
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:09.838Z",
+      "id": 46
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:11.792Z",
+      "id": 47
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:30.710Z",
+      "id": 48
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:32.422Z",
+      "id": 49
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:33.949Z",
+      "id": 50
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:35.457Z",
+      "id": 51
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:37.622Z",
+      "id": 52
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:39.376Z",
+      "id": 53
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:40.881Z",
+      "id": 54
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:42.702Z",
+      "id": 55
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:45.100Z",
+      "id": 56
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:46.886Z",
+      "id": 57
+    },
+    {
+      "log": "ADMIN: BANNED/UNBANNED SOMEONE ",
+      "createdAt": "2023-10-12T21:43:48.195Z",
+      "id": 58
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T21:43:55.093Z",
+      "id": 59
+    },
+    {
+      "log": "user with name: user - logged in.",
+      "createdAt": "2023-10-12T21:45:21.523Z",
+      "id": 60
+    },
+    {
+      "log": "user with name: user - logged out.",
+      "createdAt": "2023-10-12T21:47:00.325Z",
+      "id": 61
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T21:47:07.269Z",
+      "id": 62
+    },
+    {
+      "log": "ADMIN: TURNED ON/OFF STRICT PASSWORD RULE FOR SOMEONE ",
+      "createdAt": "2023-10-12T21:47:19.253Z",
+      "id": 63
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T21:47:24.813Z",
+      "id": 64
+    },
+    {
+      "log": "user with name: user - logged in.",
+      "createdAt": "2023-10-12T21:47:31.597Z",
+      "id": 65
+    },
+    {
+      "log": "user with name: user - changed password and logged out.",
+      "createdAt": "2023-10-12T21:47:49.004Z",
+      "id": 66
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T21:48:01.294Z",
+      "id": 67
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T21:49:39.261Z",
+      "id": 68
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T21:52:51.798Z",
+      "id": 69
+    },
+    {
+      "log": "user with name: admin - logged out.",
+      "createdAt": "2023-10-12T22:52:37.918Z",
+      "id": 70
+    },
+    {
+      "log": "user with name: admin - logged in.",
+      "createdAt": "2023-10-12T23:10:32.079Z",
+      "id": 71
     }
   ],
   "users": [
     {
       "id": 0,
       "login": "admin",
-      "password": "admin123",
+      "password": 0.006029891776495828,
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 1,
+      "login": "user",
+      "password": 0.007028113625034345,
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 2,
+      "login": "teacher",
+      "password": "",
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 3,
+      "login": "student",
+      "password": "",
       "banned": false,
       "strictPass": true
     },
     {
-      "login": "user",
+      "id": 4,
+      "login": "master",
       "password": "",
       "banned": false,
-      "strictPass": true,
-      "id": 1
+      "strictPass": true
+    },
+    {
+      "id": 5,
+      "login": "alteruser",
+      "password": "",
+      "banned": false,
+      "strictPass": true
+    },
+    {
+      "id": 6,
+      "login": "john",
+      "password": "",
+      "banned": false,
+      "strictPass": true
+    },
+    {
+      "id": 7,
+      "login": "ukrainian",
+      "password": "",
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 8,
+      "login": "root",
+      "password": "",
+      "banned": false,
+      "strictPass": true
+    },
+    {
+      "id": 9,
+      "login": "spike",
+      "password": "",
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 10,
+      "login": "logan",
+      "password": "",
+      "banned": false,
+      "strictPass": false
+    },
+    {
+      "id": 11,
+      "login": "bmw",
+      "password": "",
+      "banned": false,
+      "strictPass": true
     }
   ]
 }

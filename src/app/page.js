@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
   const [password, setPassword] = useState('')
   const [err, setErr] = useState('')
   const [signTriesCounter, setSignTriesCounter] = useState(0)
+  const [succSign, setSuccSign] = useState(false)
   function listAllUserData() {
       const responce = fetch('http://localhost:3001/users')   
       .then((response) => { 
@@ -43,14 +45,14 @@ export default function Home() {
       if(user.banned){
         throw new Error('banned')
       }
-      if(new Date() > new Date(user.createdAt).getDate()+30){
+      if(new Date() > new Date(user.createdAt).setDate(new Date(user.createdAt).getDate()+30 )){
         throw new Error('free period expired')
       }
 
       if (user) {
           window.localStorage.setItem('authData', JSON.stringify(user))
           pullLog()
-          nav.push('/authQuestions')
+          setSuccSign(true)
           return 1; //success sign in
       } else {
         setSignTriesCounter(signTriesCounter+1)
@@ -73,6 +75,9 @@ export default function Home() {
       createdAt: new Date().toISOString()  
     }
     )
+  }
+  function onChange(){
+    nav.push('/authQuestions')
   }
 
   useEffect(()=>{
@@ -127,6 +132,13 @@ export default function Home() {
       >
         SIGN IN
       </button>
+      {
+        succSign &&
+        <ReCAPTCHA
+        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+        onChange={onChange}
+      />
+      }
       </div>
     </section>
     </>

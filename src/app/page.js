@@ -43,6 +43,9 @@ export default function Home() {
       if(user.banned){
         throw new Error('banned')
       }
+      if(new Date() > new Date(user.createdAt).getDate()+30){
+        throw new Error('free period expired')
+      }
 
       if (user) {
           window.localStorage.setItem('authData', JSON.stringify(user))
@@ -59,6 +62,7 @@ export default function Home() {
     }
     catch(err) {
       if(err.message === 'banned') { setErr('You were banned') }
+      if(err.message === 'free period expired') { setErr('free period expired') }
       else{setErr('Seems like wrong password.')}
     }
   }

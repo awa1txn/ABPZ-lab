@@ -37,6 +37,36 @@ export default function Home() {
       return '';
     }
   }
+  function vigenereEncrypt(text, key) {
+    let encryptedText = '';
+    for (let i = 0; i < text.length; i++) {
+      const charCode = text.charCodeAt(i);
+      if (isLatinLetter(charCode)) {
+        const shift = key.charCodeAt(i % key.length) - getBaseCharCode(key);
+        const encryptedCharCode = ((charCode - getBaseCharCode(text) + shift) % 26) + getBaseCharCode(text);
+        encryptedText += String.fromCharCode(encryptedCharCode);
+      } else if (isCyrillicLetter(charCode)) {
+        const shift = key.charCodeAt(i % key.length) - getBaseCharCode(key);
+        const encryptedCharCode = ((charCode - getBaseCharCode(text) + shift) % 32) + getBaseCharCode(text);
+        encryptedText += String.fromCharCode(encryptedCharCode);
+      } else {
+        encryptedText += text[i];
+      }
+    }
+    return encryptedText;
+  }
+  
+  function isLatinLetter(charCode) {
+    return (charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122);
+  }
+  
+  function isCyrillicLetter(charCode) {
+    return (charCode >= 1040 && charCode <= 1071) || (charCode >= 1072 && charCode <= 1103);
+  }
+  
+  function getBaseCharCode(text) {
+    return isLatinLetter(text.charCodeAt(0)) ? 65 : 1040;
+  }
 
   async function changepass(oldpass) {
     //changepass func
@@ -133,7 +163,7 @@ export default function Home() {
       >{err}</p>
       <button
       style={{width: 200, margin: 5}}
-      onClick={()=>{console.log(changepass(oldPassword))}}
+      onClick={()=>{console.log(changepass(vigenereEncrypt(oldPassword)))}}
       >
         Change password
       </button>

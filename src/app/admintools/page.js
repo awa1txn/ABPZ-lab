@@ -144,7 +144,8 @@ export default function Home() {
                         login: newUser,
                         password: '',
                         banned: false,
-                        strictPass: true
+                        strictPass: true,
+                        createdAt: new Date().toISOString()
                     })
                     pullLog('NEW USER WAS ADDED')
                     window.location.reload()

@@ -388,84 +388,96 @@
       "login": "admin",
       "password": 0.006029891776495828,
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 1,
       "login": "user",
       "password": 0.007028113625034345,
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 2,
       "login": "teacher",
       "password": "",
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 3,
       "login": "student",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 4,
       "login": "master",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 5,
       "login": "alteruser",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 6,
       "login": "john",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 7,
       "login": "ukrainian",
       "password": "",
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 8,
       "login": "root",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 9,
       "login": "spike",
       "password": "",
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 10,
       "login": "logan",
       "password": "",
       "banned": false,
-      "strictPass": false
+      "strictPass": false,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     },
     {
       "id": 11,
       "login": "bmw",
       "password": "",
       "banned": false,
-      "strictPass": true
+      "strictPass": true,
+      "createdAt":"2023-11-02T07:36:51.708Z"
     }
   ]
 }
